@@ -52,7 +52,7 @@ else:
 
     if not found_duplicate:
         print("No duplicate names.")
-    print()
+
 
 
 
