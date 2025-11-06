@@ -27,4 +27,32 @@ else:
         data = participants[i]
         print(f"{i + 1}. {data['name']} - {data['track']}")
     print()
+    # Task 3: Track Diversity Report
+    track_list = set()
+    for p in participants:
+        track_list.add(p["track"])
+
+    print("Tracks offered in this event:")
+    print(", ".join(track_list))
+    print()
+
+    if len(track_list) < 2:
+        print("Not enough variety in tracks.\n")
+    # Task 4: Duplicate Name Detection
+    checked_names = set()
+    found_duplicate = False
+
+    for p in participants:
+        name = p["name"]
+        if name in checked_names:
+            print(f"Duplicate name found: {name}")
+            found_duplicate = True
+        else:
+            checked_names.add(name)
+
+    if not found_duplicate:
+        print("No duplicate names.")
+    print()
+
+
 
